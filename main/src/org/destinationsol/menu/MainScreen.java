@@ -70,6 +70,11 @@ public class MainScreen implements SolUiScreen {
     myCreditsCtrl.setDisplayName("Credits");
     myControls.add(myCreditsCtrl);
 
+//New image being loaded here.
+    FileHandle imageFile = FileManager.getInstance().getImagesDirectory().child("christmas.png");
+    exampleImg = textureManager.getTexture(imageFile);
+//End of loading new image
+
     myTitleTex = textureManager.getTex("ui/title", null);
   }
 
@@ -132,8 +137,14 @@ public class MainScreen implements SolUiScreen {
 
   @Override
   public void drawImgs(UiDrawer uiDrawer, SolApplication cmp) {
+    
     float sz = .55f;
     if (!DebugOptions.PRINT_BALANCE) uiDrawer.draw(myTitleTex, sz, sz, sz/2, sz/2, uiDrawer.r/2, sz/2, 0, SolColor.W);
+
+    //Loading the new image
+      float sz = .55f;
+    if (!DebugOptions.PRINT_BALANCE) uiDrawer.draw(exampleImg, sz, sz, sz/2, sz/2, uiDrawer.r/2, sz/2, 0, SolColor.W);
+
   }
 
   @Override
