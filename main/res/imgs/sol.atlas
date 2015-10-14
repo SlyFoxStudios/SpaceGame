@@ -191,7 +191,7 @@ deco/space/sysDeco
   offset: 0, 0
   index: 0
 
-sol3.png
+nebula.png
 format: RGBA8888
 filter: MipMapNearestNearest,MipMapNearestNearest
 repeat: none
@@ -202,6 +202,18 @@ farBgBig/nebulae2
   orig: 1024, 1024
   offset: 0, 0
   index: -1
+
+logo.png
+  format: RGBA8888
+  filter: MipMapNearestNearest,MipMapNearestNearest
+  repeat: none
+  ui/logo
+    rotate: false
+    xy: 0, 0
+    size: 255, 255
+    orig: 255, 255
+    offset: 0, 0
+    index: -1
 
 sol4.png
 format: RGBA8888
@@ -1549,3 +1561,5 @@ ui/whiteTex
   orig: 1, 1
   offset: 0, 0
   index: -1
+
+
