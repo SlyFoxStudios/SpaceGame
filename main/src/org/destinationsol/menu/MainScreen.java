@@ -88,26 +88,39 @@ public class MainScreen implements SolUiScreen {
 
   @Override
   public void updateCustom(SolApplication cmp, SolInputManager.Ptr[] ptrs, boolean clickedOutside) {
-    if (cmp.getOptions().controlType == GameOptions.CONTROL_CONTROLLER) {
+    SolInputManager im = cmp.getInputMan();
+    MenuScreens screens = cmp.getMenuScreens();
+
+
+//Just shit about the controls.
+  if (cmp.getOptions().controlType == GameOptions.CONTROL_CONTROLLER) {
       myTutCtrl.setEnabled(false);
     } else {
       myTutCtrl.setEnabled(true);
     }
 
+
+    //What to do when Tutorial button is pressed.
     if (myTutCtrl.isJustOff()) {
       cmp.loadNewGame(true, false);
       return;
     }
-    SolInputManager im = cmp.getInputMan();
-    MenuScreens screens = cmp.getMenuScreens();
+
+
+    //What to do when new-game is pressed.
     if (myNewGameCtrl.isJustOff()) {
       im.setScreen(cmp, screens.newGame);
       return;
     }
+
+
+    //What to do when Options Control Is pressed
     if (myOptionsCtrl.isJustOff()) {
       im.setScreen(cmp, screens.options);
       return;
     }
+
+
     if (myExitCtrl.isJustOff()) {
       // Save the settings on exit, but not on mobile as settings don't exist there.
       if (isMobile == false) {
@@ -116,9 +129,13 @@ public class MainScreen implements SolUiScreen {
       Gdx.app.exit();
       return;
     }
+
+    //What to do when credits button is pressed
     if (myCreditsCtrl.isJustOff()) {
       im.setScreen(cmp, screens.credits);
     }
+
+
   }
 
   @Override
@@ -133,11 +150,13 @@ public class MainScreen implements SolUiScreen {
 
   @Override
   public void drawBg(UiDrawer uiDrawer, SolApplication cmp) {
+    //Draws background in here.
   }
 
   @Override
   public void drawImgs(UiDrawer uiDrawer, SolApplication cmp) {
     
+    //Drawing the Normal logo
     float sz = .55f;
     if (!DebugOptions.PRINT_BALANCE) uiDrawer.draw(myTitleTex, sz, sz, sz/2, sz/2, uiDrawer.r/2, sz/2, 0, SolColor.W);
 
