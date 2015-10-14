@@ -43,7 +43,13 @@ public class MainScreen implements SolUiScreen {
   private final SolUiControl myExitCtrl;
   private final SolUiControl myNewGameCtrl;
   private final SolUiControl myCreditsCtrl;
+  private final SolUiControl myPlayCtrl;
+  private final SolUiControl myCommunityHubCtrl;
+  private final SolUiControl myExtrasCtrl;
+
+  //Textures here.
   private final TextureAtlas.AtlasRegion myTitleTex;
+  //Mobile component
   private final boolean isMobile;
 
   public MainScreen(MenuLayout menuLayout, TextureManager textureManager, boolean mobile, float r, GameOptions gameOptions) {
@@ -58,17 +64,29 @@ public class MainScreen implements SolUiScreen {
     myNewGameCtrl.setDisplayName("New Game");
     myControls.add(myNewGameCtrl);
 
+    myPlayCtrl = new SolUiControl(menuLayout.buttonRect(-1, 0), true, gameOptions.getKeyShoot());
+    myPlayCtrl.setDisplayName("Play");
+    myControls.add(myPlayCtrl);
+
+    myCommunityHubCtrl = new SolUiControl(menuLayout.buttonRect(-1, 1), true, Input.Keys.H);
+    myCommunityHubCtrl.setDisplayName("Community Hub");
+    myControls.add(myCommunityHubCtrl);
+
+    myExtrasCtrl = new SolUiControl(menuLayout.buttonRect(-1, 2), true, Input.Keys.E);
+    myExtrasCtrl.setDisplayName("Extras");
+    myControls.add(myExtrasCtrl);
+
     myOptionsCtrl = new SolUiControl(mobile ? null : menuLayout.buttonRect(-1, 3), true, Input.Keys.O);
     myOptionsCtrl.setDisplayName("Options");
     myControls.add(myOptionsCtrl);
 
+    myCreditsCtrl = new SolUiControl(menuLayout.buttonRect(-1, 4), true, Input.Keys.C);
+    myCreditsCtrl.setDisplayName("Credits")
+    myControls.add(myCreditsCtrl);
+
     myExitCtrl = new SolUiControl(menuLayout.buttonRect(-1, 4), true, gameOptions.getKeyEscape());
     myExitCtrl.setDisplayName("Exit");
     myControls.add(myExitCtrl);
-
-    myCreditsCtrl = new SolUiControl(creditsBtnRect(r), true, Input.Keys.C);
-    myCreditsCtrl.setDisplayName("Credits");
-    myControls.add(myCreditsCtrl);
 
 //New image being loaded here.
     FileHandle imageFile = FileManager.getInstance().getImagesDirectory().child("christmas.png");
@@ -110,6 +128,27 @@ public class MainScreen implements SolUiScreen {
     //What to do when new-game is pressed.
     if (myNewGameCtrl.isJustOff()) {
       im.setScreen(cmp, screens.newGame);
+      return;
+    }
+
+
+    //What to do when Play Button is pressed.
+    if(myPlayCtrl.isJustOff()){
+      cmp.setScreen(cmp, screens.playGame);
+      return;
+    }
+
+
+    //What to do when Community Hub Button is pressed.
+    if(myCommunityHubCtrl.isJustOff){
+      im.setScreen(cmp, screens.communityHub);
+      return;
+    }
+
+
+    //What to do when Extras button is pressed.
+    if(myExtrasCtrl.isJustOff){
+      im.setScreen(cmp, screens.extras);
       return;
     }
 

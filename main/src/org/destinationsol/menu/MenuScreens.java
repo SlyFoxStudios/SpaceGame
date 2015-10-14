@@ -29,6 +29,8 @@ public class MenuScreens {
   public final LoadingScreen loading;
   public final NewGameScreen newGame;
   public final NewShipScreen newShip;
+  public final CommunityHubScreen communityHub;
+  public final ExtrasScreen extrasScreen;
 
   public MenuScreens(SolLayouts layouts, TextureManager textureManager, boolean mobile, float r, GameOptions gameOptions) {
     MenuLayout menuLayout = layouts.menuLayout;
@@ -40,6 +42,8 @@ public class MenuScreens {
     loading = new LoadingScreen();
     newGame = new NewGameScreen(menuLayout, gameOptions);
     newShip = new NewShipScreen(menuLayout, gameOptions);
+    communityHub = new CommunityHubScreen(menuLayout, textureManager, r, gameOptions);
+    extrasScreen = new ExtrasScreen(menuLayout, textureManager, r, gameOptions);
   }
 
 }
