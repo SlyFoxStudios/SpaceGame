@@ -53,7 +53,7 @@ public class MainScreen implements SolUiScreen {
 /**START DATE VARIABLES**/
     Calendar var1 = Calendar.getInstance();
 
-    if (var1.get(2) + 1 == 9 && var1.get(3) >= 20 && var1.get(5) <= 26)
+    if (var1.get(2) + 1 == 12 && var1.get(3) >= 28 && var1.get(5) <= 28)
     {
       this.isChristmas = true;
     }
