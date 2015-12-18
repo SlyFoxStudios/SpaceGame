@@ -11,8 +11,6 @@ import com.badlogic.gdx.controllers.PovDirection;
 import com.badlogic.gdx.math.Vector3;
 import com.miloshpetrov.sol2.GameOptions;
 import com.miloshpetrov.sol2.SolApplication;
-import com.miloshpetrov.sol2.common.SolColor;
-import com.miloshpetrov.sol2.game.DebugOptions;
 import com.miloshpetrov.sol2.ui.SolInputManager;
 import com.miloshpetrov.sol2.ui.SolUiControl;
 import com.miloshpetrov.sol2.ui.UiDrawer;
@@ -65,7 +63,7 @@ public class InputMapControllerScreen implements InputMapOperations {
         itemsList.add(new InputConfigItem("Map", gameOptions.getKeyMapName()));
         itemsList.add(new InputConfigItem("Inventory", gameOptions.getKeyInventoryName()));
         itemsList.add(new InputConfigItem("Drop Item", gameOptions.getKeyDropName()));
-        itemsList.add(new InputConfigItem("Shop", gameOptions.getKeyTalkName()));
+        itemsList.add(new InputConfigItem("Talk", gameOptions.getKeyTalkName()));
         itemsList.add(new InputConfigItem("Sell", gameOptions.getKeySellMenuName()));
         itemsList.add(new InputConfigItem("Buy", gameOptions.getKeyBuyMenuName()));
         itemsList.add(new InputConfigItem("Change Ship", gameOptions.getKeyChangeShipMenuName()));
@@ -321,7 +319,6 @@ public class InputMapControllerScreen implements InputMapOperations {
 
     @Override
     public void drawBg(UiDrawer uiDrawer, SolApplication cmp) {
-        uiDrawer.draw(uiDrawer.filler, SolColor.Background_Grey);
 
     }
 

@@ -70,7 +70,4 @@ public class UiDrawer {
   public void setTextMode(Boolean textMode) {
     myTextMode = textMode;
   }
-
-
-
 }

@@ -76,22 +76,18 @@ public class MainScreen implements SolUiScreen {
     myMenuCtrl = new SolUiControl(menuArea, true, gameOptions.getKeyMenu());
     myMenuCtrl.setDisplayName("Menu");
     myControls.add(myMenuCtrl);
-
     Rectangle mapArea = mobile ? btn(0, HELPER_ROW_1, true) : rightPaneLayout.buttonRect(1);
     mapCtrl = new SolUiControl(mapArea, true, gameOptions.getKeyMap());
     mapCtrl.setDisplayName("Map");
     myControls.add(mapCtrl);
-
     Rectangle invArea = mobile ? btn(lastCol, HELPER_ROW_1, true) : rightPaneLayout.buttonRect(2);
     invCtrl = new SolUiControl(invArea, true, gameOptions.getKeyInventory());
     invCtrl.setDisplayName("Items");
     myControls.add(invCtrl);
-
     Rectangle talkArea = mobile ? btn(lastCol, HELPER_ROW_2, true) : rightPaneLayout.buttonRect(3);
     talkCtrl = new SolUiControl(talkArea, true, gameOptions.getKeyTalk());
-    talkCtrl.setDisplayName("Shop");
+    talkCtrl.setDisplayName("Talk");
     myControls.add(talkCtrl);
-
     myPauseCtrl = new SolUiControl(null, true, gameOptions.getKeyPause());
     myControls.add(myPauseCtrl);
 

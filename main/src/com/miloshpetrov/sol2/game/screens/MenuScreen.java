@@ -5,7 +5,6 @@ import com.miloshpetrov.sol2.common.SolColor;
 import com.miloshpetrov.sol2.game.SolGame;
 import com.miloshpetrov.sol2.GameOptions;
 import com.miloshpetrov.sol2.menu.MenuLayout;
-import com.miloshpetrov.sol2.menu.MenuScreens;
 import com.miloshpetrov.sol2.ui.*;
 
 import java.util.ArrayList;
@@ -16,29 +15,23 @@ public class MenuScreen implements SolUiScreen {
   private final SolUiControl myCloseCtrl;
   private final SolUiControl myExitCtrl;
   private final SolUiControl myRespawnCtrl;
-
-  private final SolUiControl myOptionsCtrl;
+  private final SolUiControl myVolCtrl;
 
   public MenuScreen(MenuLayout menuLayout, GameOptions gameOptions) {
     myControls = new ArrayList<SolUiControl>();
 
-    myCloseCtrl = new SolUiControl(menuLayout.buttonRect(-1, 1), true, gameOptions.getKeyClose());
-    myCloseCtrl.setDisplayName("Resume");
-    myControls.add(myCloseCtrl);
-
+    myVolCtrl = new SolUiControl(menuLayout.buttonRect(-1, 1), true);
+    myVolCtrl.setDisplayName("Vol");
+    myControls.add(myVolCtrl);
     myRespawnCtrl = new SolUiControl(menuLayout.buttonRect(-1, 2), true);
     myRespawnCtrl.setDisplayName("Respawn");
     myControls.add(myRespawnCtrl);
-
-    myOptionsCtrl = new SolUiControl(menuLayout.buttonRect(-1, 3), true);
-    myOptionsCtrl.setDisplayName("Options");
-    myControls.add(myOptionsCtrl);
-
-    myExitCtrl = new SolUiControl(menuLayout.buttonRect(-1, 4), true);
+    myExitCtrl = new SolUiControl(menuLayout.buttonRect(-1, 3), true);
     myExitCtrl.setDisplayName("Exit");
     myControls.add(myExitCtrl);
-
-
+    myCloseCtrl = new SolUiControl(menuLayout.buttonRect(-1, 4), true, gameOptions.getKeyClose());
+    myCloseCtrl.setDisplayName("Resume");
+    myControls.add(myCloseCtrl);
   }
 
   @Override
@@ -50,19 +43,19 @@ public class MenuScreen implements SolUiScreen {
   public void updateCustom(SolApplication cmp, SolInputManager.Ptr[] ptrs, boolean clickedOutside) {
     SolGame g = cmp.getGame();
     g.setPaused(true);
-    MenuScreens screens = cmp.getMenuScreens();
     SolInputManager im = cmp.getInputMan();
     GameOptions options = cmp.getOptions();
-
+    myVolCtrl.setDisplayName("Volume: " + getVolName(options));
+    if (myVolCtrl.isJustOff()) {
+      options.advanceVolMul();
+    }
     if (myRespawnCtrl.isJustOff()) {
       g.respawn();
+      im.setScreen(cmp, g.getScreens().mainScreen);
       g.setPaused(false);
     }
     if (myExitCtrl.isJustOff()) {
       cmp.finishGame();
-    }
-    if (myOptionsCtrl.isJustOff()) {
-      im.setScreen(cmp, screens.gameoptionsScreen);
     }
     if (myCloseCtrl.isJustOff()) {
       g.setPaused(false);
@@ -70,7 +63,13 @@ public class MenuScreen implements SolUiScreen {
     }
   }
 
-
+  private String getVolName(GameOptions options) {
+    float volMul = options.volMul;
+    if (volMul == 0) return "Off";
+    if (volMul < .4f) return "Low";
+    if (volMul < .7f) return "High";
+    return "Max";
+  }
 
   @Override
   public void drawBg(UiDrawer uiDrawer, SolApplication cmp) {

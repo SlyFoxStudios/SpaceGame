@@ -1,14 +1,9 @@
 package com.miloshpetrov.sol2.menu;
 
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.miloshpetrov.sol2.GameOptions;
 import com.miloshpetrov.sol2.SolApplication;
-import com.miloshpetrov.sol2.TextureManager;
 import com.miloshpetrov.sol2.common.SolColor;
-import com.miloshpetrov.sol2.files.FileManager;
-import com.miloshpetrov.sol2.game.DebugOptions;
 import com.miloshpetrov.sol2.ui.*;
 
 import java.util.ArrayList;
@@ -19,7 +14,7 @@ public class NewShipScreen implements SolUiScreen {
   private final SolUiControl myOkCtrl;
   public final SolUiControl myCancelCtrl;
 
-  public NewShipScreen(MenuLayout menuLayout, TextureManager textureManager, GameOptions gameOptions) {
+  public NewShipScreen(MenuLayout menuLayout, GameOptions gameOptions) {
     myControls = new ArrayList<SolUiControl>();
     myOkCtrl = new SolUiControl(menuLayout.buttonRect(-1, 1), true, Input.Keys.H);
     myOkCtrl.setDisplayName("OK");
@@ -28,7 +23,6 @@ public class NewShipScreen implements SolUiScreen {
     myCancelCtrl = new SolUiControl(menuLayout.buttonRect(-1, 4), true, gameOptions.getKeyEscape());
     myCancelCtrl.setDisplayName("Cancel");
     myControls.add(myCancelCtrl);
-
   }
 
   @Override
@@ -63,6 +57,7 @@ public class NewShipScreen implements SolUiScreen {
 
   @Override
   public void drawBg(UiDrawer uiDrawer, SolApplication cmp) {
+
   }
 
   @Override

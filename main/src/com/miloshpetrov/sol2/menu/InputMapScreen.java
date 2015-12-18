@@ -1,17 +1,12 @@
 package com.miloshpetrov.sol2.menu;
 
 
-import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.miloshpetrov.sol2.Const;
 import com.miloshpetrov.sol2.GameOptions;
 import com.miloshpetrov.sol2.SolApplication;
-import com.miloshpetrov.sol2.TextureManager;
 import com.miloshpetrov.sol2.common.SolColor;
-import com.miloshpetrov.sol2.files.FileManager;
-import com.miloshpetrov.sol2.game.DebugOptions;
 import com.miloshpetrov.sol2.ui.*;
 
 import java.util.ArrayList;
@@ -53,7 +48,7 @@ public class InputMapScreen implements SolUiScreen {
     private static final int BTN_ROWS = 4;
 
 
-    public InputMapScreen(float r, TextureManager textureManager, GameOptions gameOptions) {
+    public InputMapScreen(float r, GameOptions gameOptions) {
         controls = new ArrayList<SolUiControl>();
 
         float contentW = .8f;
@@ -121,7 +116,6 @@ public class InputMapScreen implements SolUiScreen {
         inputMapKeyboardScreen = new InputMapKeyboardScreen(this, gameOptions);
         inputMapControllerScreen = new InputMapControllerScreen(this, gameOptions);
         inputMapMixedScreen = new InputMapMixedScreen(this, gameOptions);
-
     }
 
     @Override
@@ -220,7 +214,6 @@ public class InputMapScreen implements SolUiScreen {
 
     @Override
     public void drawBg(UiDrawer uiDrawer, SolApplication cmp) {
-        uiDrawer.draw(uiDrawer.filler, SolColor.Background_Grey);
 
     }
 

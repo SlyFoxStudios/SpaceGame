@@ -136,9 +136,9 @@ public class TutorialManager {
     }
 
     if (mobile) {
-      s("Fly closer to the station\nand shop on it", main.talkCtrl, true);
+      s("Fly closer to the station\nand talk with it", main.talkCtrl, true);
     } else {
-      s("Fly closer to the station\nand shop on it (" + gameOptions.getKeyTalkName() + " key)", main.talkCtrl, true);
+      s("Fly closer to the station\nand talk with it (" + gameOptions.getKeyTalkName() + " key)", main.talkCtrl, true);
     }
 
     if (mouseCtrl || mobile) {
@@ -160,9 +160,9 @@ public class TutorialManager {
     }
 
     if (mobile) {
-      s("Close the Shop screen\n(Touch the screen outside inventory)", screens.talkScreen.closeCtrl, true);
+      s("Close the Talk screen\n(Touch the screen outside inventory)", screens.talkScreen.closeCtrl, true);
     } else {
-      s("Close the Shop screen\n(" + gameOptions.getKeyCloseName() + " key)", screens.talkScreen.closeCtrl, true);
+      s("Close the Talk screen\n(" + gameOptions.getKeyCloseName() + " key)", screens.talkScreen.closeCtrl, true);
     }
 
     if (mouseCtrl) {

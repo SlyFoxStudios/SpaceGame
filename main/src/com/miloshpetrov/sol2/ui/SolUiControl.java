@@ -32,8 +32,6 @@ public class SolUiControl {
     myScreenArea = screenArea;
   }
 
-
-
   public boolean maybeFlashPressed(int keyCode) {
     if (!myEnabled) return false;
     for (int i = 0, myKeysLength = myKeys.length; i < myKeysLength; i++) {
@@ -135,21 +133,7 @@ public class SolUiControl {
       uiDrawer.draw(myScreenArea, warnCol);
     }
   }
-/** Leave this... it is a backup
-  public void drawButton(UiDrawer uiDrawer, SolApplication cmp, Color warnCol) {
-    if (myScreenArea == null) return;
-    Color tint = SolColor.UI_INACTIVE;
-    if (myEnabled) {
-      if (isOn()) tint = SolColor.UI_LIGHT;
-      else if (myMouseHover) tint = SolColor.UI_MED;
-      else tint = SolColor.UI_DARK;
-    }
-    uiDrawer.draw(myScreenArea, tint);
-    if (myWarnCount > 0) {
-      uiDrawer.draw(myScreenArea, warnCol);
-    }
-  }
-**/
+
   public void drawDisplayName(UiDrawer uiDrawer) {
     if (myScreenArea == null) return;
     Color tint = myEnabled ? SolColor.W : SolColor.G;

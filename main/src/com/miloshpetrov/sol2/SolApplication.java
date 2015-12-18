@@ -9,6 +9,7 @@ import com.badlogic.gdx.physics.box2d.Box2D;
 import com.miloshpetrov.sol2.common.SolColor;
 import com.miloshpetrov.sol2.common.SolMath;
 import com.miloshpetrov.sol2.game.*;
+import com.miloshpetrov.sol2.game.sound.MusicManager;
 import com.miloshpetrov.sol2.menu.MenuScreens;
 import com.miloshpetrov.sol2.ui.*;
 
@@ -39,6 +40,8 @@ public class SolApplication implements ApplicationListener {
 
   @Override
   public void create() {
+      MusicManager.getInstance().PlayMenuMusic();
+
     myReallyMobile = Gdx.app.getType() == Application.ApplicationType.Android || Gdx.app.getType() == Application.ApplicationType.iOS;
     if (myReallyMobile) DebugOptions.read(null);
     myOptions = new GameOptions(isMobile(), null);
@@ -52,6 +55,10 @@ public class SolApplication implements ApplicationListener {
 
     myInputMan.setScreen(this, myMenuScreens.main);
     myFpsLogger = new FPSLogger();
+
+      //Stop the menu music at this point
+      //TODO: Start the menu music.
+      MusicManager.getInstance().StopMusic();
   }
 
   @Override

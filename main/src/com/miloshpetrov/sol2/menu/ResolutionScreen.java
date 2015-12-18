@@ -1,14 +1,9 @@
 package com.miloshpetrov.sol2.menu;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.miloshpetrov.sol2.GameOptions;
 import com.miloshpetrov.sol2.SolApplication;
-import com.miloshpetrov.sol2.TextureManager;
 import com.miloshpetrov.sol2.common.SolColor;
-import com.miloshpetrov.sol2.files.FileManager;
-import com.miloshpetrov.sol2.game.DebugOptions;
 import com.miloshpetrov.sol2.ui.*;
 
 import java.util.ArrayList;
@@ -21,8 +16,7 @@ public class ResolutionScreen implements SolUiScreen {
   private final SolUiControl myResoCtrl;
   private final SolUiControl myFsCtrl;
 
-
-  public ResolutionScreen(MenuLayout menuLayout, TextureManager textureManager, GameOptions gameOptions) {
+  public ResolutionScreen(MenuLayout menuLayout, GameOptions gameOptions) {
     myControls = new ArrayList<SolUiControl>();
 
     myResoCtrl = new SolUiControl(menuLayout.buttonRect(-1, 2), true);
@@ -36,7 +30,6 @@ public class ResolutionScreen implements SolUiScreen {
     myCloseCtrl = new SolUiControl(menuLayout.buttonRect(-1, 4), true, gameOptions.getKeyEscape());
     myCloseCtrl.setDisplayName("Back");
     myControls.add(myCloseCtrl);
-
   }
 
   @Override
@@ -67,8 +60,6 @@ public class ResolutionScreen implements SolUiScreen {
 
   @Override
   public void drawBg(UiDrawer uiDrawer, SolApplication cmp) {
-    uiDrawer.draw(uiDrawer.filler, SolColor.Background_Grey);
-
   }
 
   @Override

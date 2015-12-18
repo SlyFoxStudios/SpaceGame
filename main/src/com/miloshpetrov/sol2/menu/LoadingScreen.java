@@ -1,12 +1,7 @@
 package com.miloshpetrov.sol2.menu;
 
-import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.miloshpetrov.sol2.SolApplication;
-import com.miloshpetrov.sol2.TextureManager;
 import com.miloshpetrov.sol2.common.SolColor;
-import com.miloshpetrov.sol2.files.FileManager;
-import com.miloshpetrov.sol2.game.DebugOptions;
 import com.miloshpetrov.sol2.ui.*;
 
 import java.util.ArrayList;
@@ -17,7 +12,7 @@ public class LoadingScreen implements SolUiScreen {
   private boolean myTut;
   private boolean myUsePrevShip;
 
-  public LoadingScreen(TextureManager textureManager) {
+  public LoadingScreen() {
     myControls = new ArrayList<SolUiControl>();
   }
 
@@ -46,8 +41,6 @@ public class LoadingScreen implements SolUiScreen {
 
   @Override
   public void drawBg(UiDrawer uiDrawer, SolApplication cmp) {
-    uiDrawer.draw(uiDrawer.filler, SolColor.Background_Grey);
-
   }
 
   @Override

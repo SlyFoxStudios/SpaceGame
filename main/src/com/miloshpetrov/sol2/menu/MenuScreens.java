@@ -13,27 +13,25 @@ public class MenuScreens {
   public final LoadingScreen loading;
   public final NewGameScreen newGame;
   public final NewShipScreen newShip;
-
-  public final GameOptionsScreen gameoptionsScreen;
-  public final ControlOptions controloptionsScreen;
-  public final Extras extrasScreen;
-
+    public final GameOptionsScreen gameoptionsScreen;
+    public final ControlOptions controloptionsScreen;
+    public final ContinueScreen continueScreen;
+    public final PlayGameScreen playGameScreen;
 
   public MenuScreens(SolLayouts layouts, TextureManager textureManager, boolean mobile, float r, GameOptions gameOptions) {
     MenuLayout menuLayout = layouts.menuLayout;
     main = new MainScreen(menuLayout, textureManager, mobile, r, gameOptions);
     options = new OptionsScreen(menuLayout, textureManager, gameOptions);
-    inputMapScreen = new InputMapScreen(r, textureManager, gameOptions);
-    resolutionScreen = new ResolutionScreen(menuLayout, textureManager, gameOptions);
-    credits = new CreditsScreen(menuLayout, textureManager, r, gameOptions);
-    loading = new LoadingScreen(textureManager);
-
+    inputMapScreen = new InputMapScreen(r, gameOptions);
+    resolutionScreen = new ResolutionScreen(menuLayout, gameOptions);
+    credits = new CreditsScreen(menuLayout, r, gameOptions);
+    loading = new LoadingScreen();
     newGame = new NewGameScreen(menuLayout, textureManager, gameOptions);
-    newShip = new NewShipScreen(menuLayout, textureManager, gameOptions);
-    gameoptionsScreen = new GameOptionsScreen(menuLayout, mobile, textureManager, r, gameOptions);
-    controloptionsScreen = new ControlOptions(menuLayout, gameOptions);
-    extrasScreen = new Extras(menuLayout, textureManager, mobile, r, gameOptions);
-
+    newShip = new NewShipScreen(menuLayout, gameOptions);
+      gameoptionsScreen = new GameOptionsScreen(menuLayout, mobile, textureManager, r, gameOptions);
+      controloptionsScreen = new ControlOptions(menuLayout, gameOptions);
+      continueScreen = new ContinueScreen(menuLayout, textureManager, gameOptions);
+      playGameScreen = new PlayGameScreen(menuLayout, textureManager, gameOptions);
   }
 
 }

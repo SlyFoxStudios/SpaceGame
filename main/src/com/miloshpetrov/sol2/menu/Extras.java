@@ -10,6 +10,7 @@ import com.miloshpetrov.sol2.GameOptions;
 import com.miloshpetrov.sol2.SolApplication;
 import com.miloshpetrov.sol2.TextureManager;
 import com.miloshpetrov.sol2.common.SolColor;
+import com.miloshpetrov.sol2.common.SolMath;
 import com.miloshpetrov.sol2.files.FileManager;
 import com.miloshpetrov.sol2.game.DebugOptions;
 import com.miloshpetrov.sol2.ui.*;
@@ -25,6 +26,7 @@ public class Extras implements SolUiScreen {
     private final SolUiControl myExitCtrl;
     private final SolUiControl myCreditsCtrl;
     private final SolUiControl myCommunityCtrl;
+    public final TextureAtlas.AtlasRegion myNebTex;
 
 
 
@@ -51,6 +53,7 @@ public class Extras implements SolUiScreen {
 
 
         //myTitleTex = textureManager.getTex("ui/title", null);
+        myNebTex = textureManager.getTex("farBgBig/nebulae2", SolMath.test(.5f), null);
 
 
     }
@@ -96,7 +99,8 @@ public class Extras implements SolUiScreen {
     @Override
     public void drawBg(UiDrawer uiDrawer, SolApplication cmp) {
 
-        uiDrawer.draw(uiDrawer.filler, SolColor.Background_Grey);
+        float sz = 10f;
+        uiDrawer.draw(myNebTex, sz, sz, sz/2, sz/2, uiDrawer.r/2, sz/2, 0, SolColor.Background_Grey);
 
     }
 

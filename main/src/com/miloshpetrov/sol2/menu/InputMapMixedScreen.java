@@ -6,7 +6,6 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.miloshpetrov.sol2.GameOptions;
 import com.miloshpetrov.sol2.SolApplication;
-import com.miloshpetrov.sol2.common.SolColor;
 import com.miloshpetrov.sol2.ui.SolInputManager;
 import com.miloshpetrov.sol2.ui.SolUiControl;
 import com.miloshpetrov.sol2.ui.UiDrawer;
@@ -44,7 +43,7 @@ public class InputMapMixedScreen implements InputMapOperations {
         itemsList.add(inventory);
         InputConfigItem drop = new InputConfigItem("Drop Item", gameOptions.getKeyDropName());
         itemsList.add(drop);
-        InputConfigItem talk = new InputConfigItem("Shop", gameOptions.getKeyTalkName());
+        InputConfigItem talk = new InputConfigItem("Talk", gameOptions.getKeyTalkName());
         itemsList.add(talk);
         InputConfigItem sell = new InputConfigItem("Sell", gameOptions.getKeySellMenuName());
         itemsList.add(sell);
@@ -176,7 +175,6 @@ public class InputMapMixedScreen implements InputMapOperations {
 
     @Override
     public void drawBg(UiDrawer uiDrawer, SolApplication cmp) {
-        uiDrawer.draw(uiDrawer.filler, SolColor.Background_Grey);
 
     }
 

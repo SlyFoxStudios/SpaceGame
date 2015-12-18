@@ -1,17 +1,12 @@
 package com.miloshpetrov.sol2.menu;
 
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.miloshpetrov.sol2.Const;
 import com.miloshpetrov.sol2.GameOptions;
 import com.miloshpetrov.sol2.SolApplication;
-import com.miloshpetrov.sol2.TextureManager;
 import com.miloshpetrov.sol2.common.SolColor;
 import com.miloshpetrov.sol2.common.SolMath;
-import com.miloshpetrov.sol2.files.FileManager;
-import com.miloshpetrov.sol2.game.DebugOptions;
 import com.miloshpetrov.sol2.ui.*;
 
 import java.util.*;
@@ -23,19 +18,13 @@ public class CreditsScreen implements SolUiScreen {
   private final ArrayList<String> myPages;
   private final Color myColor;
 
-
   private int myIdx;
   private float myPerc;
 
-  public CreditsScreen(MenuLayout menuLayout, TextureManager textureManager, float r, GameOptions gameOptions) {
-/**
+  public CreditsScreen(MenuLayout menuLayout, float r, GameOptions gameOptions) {
     myControls = new ArrayList<SolUiControl>();
-    myCloseCtrl = new SolUiControl(MainScreen.creditsBtnRect(r), true, gameOptions.getKeyEscape());
-    myCloseCtrl.setDisplayName("Close");
-    myControls.add(myCloseCtrl);
- **/
-    myControls = new ArrayList<SolUiControl>();
-    myCloseCtrl = new SolUiControl(menuLayout.buttonRect(-1, 4), true, Input.Keys.C);
+
+myCloseCtrl = new SolUiControl(menuLayout.buttonRect(-1, 4), true, Input.Keys.P);
     myCloseCtrl.setDisplayName("Close");
     myControls.add(myCloseCtrl);
 
@@ -44,24 +33,19 @@ public class CreditsScreen implements SolUiScreen {
     myPages = new ArrayList<String>();
     String[][] sss = {
       {
-        "A game created by",
+        "A game from",
         "",
-        "ELECLOUD"
+        "SlyFoxStudios"
       },
       {
-        "Original Creators",
+        "Main Code",
         "",
-        "Idea, coding, team lead:",
+        "Crazywolf"
+      },
+      {
+        "Music",
         "",
-        "",
-        "Drawing:",
-        "",
-        "",
-        "Additional coding:",
-        "",
-        "",
-        "Additional drawing:",
-        ""
+        "Cartoon - Why We Lose (feat. Coleman Trapp) [NCS Release]"
       },
       {
         "Game engine:",
@@ -133,8 +117,6 @@ public class CreditsScreen implements SolUiScreen {
 
   @Override
   public void drawBg(UiDrawer uiDrawer, SolApplication cmp) {
-    uiDrawer.draw(uiDrawer.filler, SolColor.Background_Grey);
-
   }
 
   @Override
