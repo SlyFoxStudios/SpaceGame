@@ -1,21 +1,20 @@
-Destination Sol
+Space Game
 ==========
 
-<p align="center"><img src="/main/imgSrcs/ui/title.png" alt="Destination Sol"/></p>
+<!--<p align="center"><img src="/main/imgSrcs/ui/title.png" alt="Destination Sol"/></p>-->
 
-This is the official open source home for the arcade space shooter Destination Sol, originally started by Milosh Petrov and a small team on [Steam](http://store.steampowered.com/app/342980/) and [SourceForge](http://sourceforge.net/projects/destinationsol)
 
-After receiving highly positive reviews launching as an indie title on Steam Milosh and the remaining team members wanted to focus on different projects, having made Destination Sol primarily to try out the involved technology.
+This repo contains the official source code to Space Game. This game is a re-code of another game with improvements and game-play changes. The old repo with the old game is located at [Github](https://github.com/MovingBlocks/DestinationSol)
 
-A call was put out to the player community for a new maintainer, and open source was an option praised by many and already somewhat in place on Sourceforge. The open source group MovingBlocks behind [Terasology](http://terasology.org) stepped in to offer infrastructure and maintenance.
+This project plans to be different and move away from the old game. We are here to bring more of the commubnity into it... but keep the game style. This is SPACE GAME. (very creative name...)
 
-Milosh accepted our offer and supported us in moving the game onwards to its new home here on GitHub where we'll set up to accept contributions from anybody willing to help improve Destination Sol and expand on its gameplay.
+Got a cool feature you have added your self? Well... we are here to help. Create a pull request and we will over view your code and even fix a few things if need be. Then within a week or 2 the game will have your little creation.
 
-Destination Sol is now officially licensed under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html) and available in source code form at [GitHub](https://github.com/MovingBlocks/DestinationSol).
+Space Game is now officially licensed under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html) and available in source code form at [GitHub](https://github.com/crazywolf132/SpaceGame).
 
-You can download the game on [Steam](http://store.steampowered.com/app/342980/), get it in the [Google Play Store](https://play.google.com/store/apps/details?id=com.miloshpetrov.sol2.android&hl=en), or download the [very latest version from our build server](http://jenkins.terasology.org/job/DestinationSol/lastSuccessfulBuild/artifact/desktop/build/distributions/DestinationSol.zip) (warning: latest build may be unstable)
+We plan to release the game on steam after we work out where we would like to take this project and after we fix some of the major bugs. This game will also be released on android and maybe iphone.
  
-Feel free to fork the project and contribute pull requests! You can visit a [Destination Sol forum](http://forum.terasology.org/forum/destination-sol.57/) on the Terasology site if you have any questions or would like to discuss the game or contributing.
+Feel free to look at the old project and Join that community, but be warned it is the old project and alot of our code will be remade from the ground-up.
 
 Gameplay
 --------
