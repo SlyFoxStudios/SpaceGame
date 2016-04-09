@@ -104,12 +104,8 @@ Contributors
 
 *Contributors on GitHub:* 
 
-* [Cervator](https://github.com/Cervator)
 * [PrivateAlpha](https://github.com/PrivateAlpha)
-* [theotherjay](https://github.com/theotherjay)
-* [LinusVanElswijk](https://github.com/LinusVanElswijk)
 * [SimonC4](https://github.com/SimonC4)
-* [grauerkoala](https://github.com/grauerkoala)
 
 ... and your name here? :-) More coming!
 
