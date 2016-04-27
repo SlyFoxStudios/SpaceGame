@@ -3,7 +3,7 @@ apply plugin: "java"
 sourceCompatibility = 1.7
 sourceSets.main.java.srcDirs = [ "src/" ]
 
-project.ext.mainClassName = "SolDesktop"
+project.ext.mainClassName = 'com.spacegame.desktop.SolDesktop'
 
 dependencies {
     compile project(":main")
@@ -29,7 +29,7 @@ jar {
 
     manifest {
         def manifestClasspath = configurations.runtime.collect {it.getName() }.join(" ")
-        attributes 'Main-Class': project.mainClassName
+        attributes 'Main-Class': 'com.spacegame.desktop.SolDesktop'
         attributes("Class-Path" : manifestClasspath)
     }
 }
